@@ -1,0 +1,11 @@
+services:
+  jeff-bot:
+    build: .
+    container_name: jeff_investidor_bot
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - "${PORT:-8080}:8080"
+    environment:
+      - PYTHONUNBUFFERED=1
